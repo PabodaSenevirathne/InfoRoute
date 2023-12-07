@@ -23,6 +23,8 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var weatherIcon: UIImageView!
     
     
+    @IBOutlet weak var changeCityButton: UIButton!
+    
     // Create a CLLocationManager instance
     let locationManager = CLLocationManager()
     
@@ -34,6 +36,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate{
         locationManager.requestWhenInUseAuthorization()
         // Start updating location
         locationManager.startUpdatingLocation()
+        
         // getWeatherAPI()
     }
     
@@ -59,6 +62,60 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate{
         
     }
     
+    @IBAction func changeCity(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Change City", message: "Enter a new city name", preferredStyle: .alert)
+
+                alertController.addTextField { textField in
+                    textField.placeholder = "City"
+                }
+
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+                let submitAction = UIAlertAction(title: "Submit", style: .default) { [weak self, weak alertController] _ in
+                    guard let cityName = alertController?.textFields?.first?.text else {
+                        return
+                    }
+                    self?.getWeatherForCity(cityName)
+                }
+
+                alertController.addAction(cancelAction)
+                alertController.addAction(submitAction)
+
+                present(alertController, animated: true, completion: nil)    }
+    
+    
+    func getWeatherForCity(_ city: String) {
+            guard let encodedCity = city.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+                print("Error encoding city name")
+                return
+            }
+
+            let apiUrl = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(encodedCity)&appid=b822db056acf7f212fae8acc4a13a245")
+
+            guard let url = apiUrl else {
+                print("Invalid URL")
+                return
+            }
+
+            let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                if let data = data {
+                    let jsonDecoder = JSONDecoder()
+
+                    do {
+                        let weatherData = try jsonDecoder.decode(Weather.self, from: data)
+
+                        DispatchQueue.main.async {
+                            self.updateWeatherData(with: weatherData)
+                        }
+
+                    } catch {
+                        print("Error decoding JSON: \(error.localizedDescription)")
+                    }
+                }
+            }
+
+            task.resume()
+        }
     // get weather data
     func getWeatherAPI(for coordinates: CLLocationCoordinate2D){
                 
