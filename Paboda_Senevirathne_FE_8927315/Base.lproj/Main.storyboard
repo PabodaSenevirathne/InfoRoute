@@ -3,42 +3,59 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
-        <scene sceneID="HvD-2Q-Q9p">
-            <objects>
-                <viewController id="3sq-Dw-Ai8" customClass="WeatherViewController" customModule="Paboda_Senevirathne_FE_8927315" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="x0x-Th-NUr">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Ud7-hh-FrK"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="5Yl-oN-y8M"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="67L-nR-pue" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="968.70229007633588" y="62.676056338028175"/>
-        </scene>
         <!--Item-->
         <scene sceneID="rgN-Ly-G8a">
             <objects>
-                <viewController id="96k-cb-B0G" sceneMemberID="viewController">
+                <viewController id="96k-cb-B0G" customClass="MapViewController" customModule="Paboda_Senevirathne_FE_8927315" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SFj-Zd-ORI">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYt-VY-G35">
+                                <rect key="frame" x="16" y="228" width="370" height="504"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Direction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHX-e6-J9j">
+                                <rect key="frame" x="175" y="75" width="69" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ya-Tc-NzQ">
+                                <rect key="frame" x="322" y="61" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                <connections>
+                                    <action selector="changeCity:" destination="96k-cb-B0G" eventType="touchUpInside" id="A1W-q4-X8m"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Oni-on-rAW">
+                                <rect key="frame" x="14" y="129" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Zbr-Pv-1SO"/>
-                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="TVV-yM-Bfo"/>
+                    <connections>
+                        <outlet property="changeCity" destination="5Ya-Tc-NzQ" id="u0g-uZ-Y5K"/>
+                        <outlet property="mapSlider" destination="Oni-on-rAW" id="LWL-Wp-MUK"/>
+                        <outlet property="mapView" destination="wYt-VY-G35" id="sFV-OE-OyX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C1A-Ml-UXb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969" y="-1480"/>
+            <point key="canvasLocation" x="968.70229007633588" y="-1480.2816901408451"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="7Pt-0J-X01">
@@ -67,7 +84,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="qiX-Fy-ZKQ" kind="relationship" relationship="viewControllers" id="6X3-dV-5at"/>
-                        <segue destination="3sq-Dw-Ai8" kind="relationship" relationship="viewControllers" id="4oW-ec-A1h"/>
                         <segue destination="96k-cb-B0G" kind="relationship" relationship="viewControllers" id="YfE-B4-S8D"/>
                         <segue destination="zoi-Q8-aM5" kind="relationship" relationship="viewControllers" id="Zpp-7h-Arw"/>
                     </connections>
@@ -217,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="otc-4R-u9Y" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-11.450381679389313" y="179.57746478873241"/>
+            <point key="canvasLocation" x="106" y="185"/>
         </scene>
     </scenes>
     <resources>
@@ -226,9 +242,6 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

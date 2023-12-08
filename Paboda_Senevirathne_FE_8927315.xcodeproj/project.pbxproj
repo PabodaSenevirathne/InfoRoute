@@ -18,6 +18,7 @@
 		D7116D462B20CF3C00BB3CFE /* Paboda_Senevirathne_FE_8927315UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7116D452B20CF3C00BB3CFE /* Paboda_Senevirathne_FE_8927315UITestsLaunchTests.swift */; };
 		D74C79FF2B22119D00AD95D5 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C79FE2B22119D00AD95D5 /* WeatherViewController.swift */; };
 		D74C7A032B22186900AD95D5 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74C7A022B22186900AD95D5 /* Weather.swift */; };
+		D7A61CA82B239E2A004D993C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A61CA72B239E2A004D993C /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		D7116D452B20CF3C00BB3CFE /* Paboda_Senevirathne_FE_8927315UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paboda_Senevirathne_FE_8927315UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D74C79FE2B22119D00AD95D5 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		D74C7A022B22186900AD95D5 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		D7A61CA72B239E2A004D993C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				D7116D242B20CF3B00BB3CFE /* SceneDelegate.swift */,
 				D7116D262B20CF3B00BB3CFE /* ViewController.swift */,
 				D7116D282B20CF3B00BB3CFE /* Main.storyboard */,
+				D7A61CA72B239E2A004D993C /* MapViewController.swift */,
 				D74C7A022B22186900AD95D5 /* Weather.swift */,
 				D74C79FE2B22119D00AD95D5 /* WeatherViewController.swift */,
 				D7116D2B2B20CF3C00BB3CFE /* Assets.xcassets */,
@@ -265,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7116D272B20CF3B00BB3CFE /* ViewController.swift in Sources */,
+				D7A61CA82B239E2A004D993C /* MapViewController.swift in Sources */,
 				D74C79FF2B22119D00AD95D5 /* WeatherViewController.swift in Sources */,
 				D7116D232B20CF3B00BB3CFE /* AppDelegate.swift in Sources */,
 				D7116D252B20CF3B00BB3CFE /* SceneDelegate.swift in Sources */,
