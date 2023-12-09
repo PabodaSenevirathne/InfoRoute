@@ -50,7 +50,7 @@
                     <connections>
                         <outlet property="changeCity" destination="5Ya-Tc-NzQ" id="u0g-uZ-Y5K"/>
                         <outlet property="mapSlider" destination="Oni-on-rAW" id="LWL-Wp-MUK"/>
-                        <outlet property="mapView" destination="wYt-VY-G35" id="sFV-OE-OyX"/>
+                        <outlet property="mapView" destination="wYt-VY-G35" id="8w2-wx-zUF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C1A-Ml-UXb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
