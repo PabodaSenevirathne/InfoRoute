@@ -47,7 +47,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate{
     }
             
         // Stop updating location
-        // locationManager.stopUpdatingLocation()
+        locationManager.stopUpdatingLocation()
             
         // get weather data based on the current location
         getWeatherAPI(for: location.coordinate)

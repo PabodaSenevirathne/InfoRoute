@@ -47,7 +47,7 @@ class MapViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDe
            startLocation = currentLocation
            
            // Stop updating location after the first update
-           locationManager.stopUpdatingLocation()
+          // locationManager.stopUpdatingLocation()
            
            // Set up the map with both start and destination locations
            setTheMap()

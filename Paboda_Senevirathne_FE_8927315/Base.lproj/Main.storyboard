@@ -58,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C1A-Ml-UXb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968.70229007633588" y="-1480.2816901408451"/>
+            <point key="canvasLocation" x="-685" y="158"/>
         </scene>
         <!--News View Controller-->
         <scene sceneID="ozg-Cy-a3T">
@@ -74,7 +74,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tw-qb-sGD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2017.5572519083969" y="-699.29577464788736"/>
+            <point key="canvasLocation" x="-2300" y="177"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="Ct6-jC-WwF">
+            <objects>
+                <viewController id="0Ag-ra-D3s" customClass="MainViewController" customModule="Paboda_Senevirathne_FE_8927315" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DHm-Y3-LP2">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hzb-vs-HzD">
+                                <rect key="frame" x="76" y="186" width="240" height="190"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pp5-um-vew">
+                                <rect key="frame" x="76" y="440" width="240" height="190"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBp-ma-tNE">
+                                <rect key="frame" x="301" y="72" width="35" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="+"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My  Final" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Bf-aQ-Luc">
+                                <rect key="frame" x="175" y="72" width="68" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3Q-8I-EUA">
+                                <rect key="frame" x="67" y="739" width="54" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="newspaper" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Syc-pU-SOp">
+                                <rect key="frame" x="171" y="739" width="52" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="map" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbu-OQ-UWL">
+                                <rect key="frame" x="273" y="739" width="53" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="cloud" catalog="system"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="v6r-QZ-geP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b3R-2w-7qr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1005.3435114503816" y="-1151.4084507042255"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Bl5-H8-fxf">
@@ -86,16 +143,16 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="96k-cb-B0G" kind="relationship" relationship="viewControllers" id="YfE-B4-S8D"/>
-                        <segue destination="zoi-Q8-aM5" kind="relationship" relationship="viewControllers" id="Zpp-7h-Arw"/>
-                        <segue destination="HbZ-BO-9cL" kind="relationship" relationship="viewControllers" id="j5b-Iz-f8H"/>
+                        <segue destination="HbZ-BO-9cL" kind="relationship" relationship="viewControllers" id="RL0-MF-WMT"/>
+                        <segue destination="96k-cb-B0G" kind="relationship" relationship="viewControllers" id="fEf-mA-oQn"/>
+                        <segue destination="zoi-Q8-aM5" kind="relationship" relationship="viewControllers" id="fze-Ct-rFl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A06-8p-5ru" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-25" y="-529"/>
+            <point key="canvasLocation" x="-89" y="-793"/>
         </scene>
-        <!--Item-->
+        <!--Weather-->
         <scene sceneID="fo0-UU-h1u">
             <objects>
                 <viewController id="zoi-Q8-aM5" customClass="WeatherViewController" customModule="Paboda_Senevirathne_FE_8927315" customModuleProvider="target" sceneMemberID="viewController">
@@ -223,7 +280,7 @@
                             <constraint firstItem="bNT-zq-Kko" firstAttribute="centerY" secondItem="0zU-7c-wDZ" secondAttribute="centerY" multiplier="1.5" id="vcO-A2-X6f"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Qy7-LK-8mB"/>
+                    <tabBarItem key="tabBarItem" title="Weather" id="Qy7-LK-8mB"/>
                     <connections>
                         <outlet property="changeCityButton" destination="zT3-Iw-ec8" id="mDZ-KU-XBV"/>
                         <outlet property="cityName" destination="npP-Ob-srt" id="Iaw-Xp-Ckh"/>
@@ -236,13 +293,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="otc-4R-u9Y" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="185"/>
+            <point key="canvasLocation" x="19" y="158"/>
         </scene>
-        <!--Item-->
+        <!--News-->
         <scene sceneID="sfN-AB-1rg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HbZ-BO-9cL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="vuR-Lb-fWZ"/>
+                    <tabBarItem key="tabBarItem" title="News" id="vuR-Lb-fWZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="in6-Wf-Lxm">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -255,10 +312,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lak-bq-huY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1090.8396946564885" y="-699.29577464788736"/>
+            <point key="canvasLocation" x="-1396" y="168"/>
         </scene>
     </scenes>
     <resources>
+        <image name="cloud" catalog="system" width="128" height="87"/>
+        <image name="map" catalog="system" width="128" height="112"/>
+        <image name="newspaper" catalog="system" width="128" height="111"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
