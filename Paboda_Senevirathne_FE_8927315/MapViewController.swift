@@ -20,6 +20,7 @@ class MapViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDe
     
     @IBOutlet weak var changeCity: UIButton!
     
+    var cityName: String?
     
     var startLocation: CLLocationCoordinate2D? // The original location of the phone
     var destinationLocation: CLLocationCoordinate2D? // The destination location
@@ -29,6 +30,12 @@ class MapViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDe
     
     override func viewDidLoad() {
             super.viewDidLoad()
+        
+        if let cityName = cityName {
+                    // Use the cityName as needed in your MapViewController
+                    print("City Name: \(cityName)")
+                }
+        
             mapView.delegate = self
             locationManager.delegate = self
             locationManager.requestWhenInUseAuthorization()

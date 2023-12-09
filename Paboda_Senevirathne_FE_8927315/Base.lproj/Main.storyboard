@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RWK-Gy-enw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Ag-ra-D3s">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -9,12 +9,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="rgN-Ly-G8a">
             <objects>
                 <viewController id="96k-cb-B0G" customClass="MapViewController" customModule="Paboda_Senevirathne_FE_8927315" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SFj-Zd-ORI">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYt-VY-G35">
@@ -49,7 +49,7 @@
                         <viewLayoutGuide key="safeArea" id="Zbr-Pv-1SO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="TVV-yM-Bfo"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="TVV-yM-Bfo"/>
                     <connections>
                         <outlet property="changeCity" destination="5Ya-Tc-NzQ" id="u0g-uZ-Y5K"/>
                         <outlet property="mapSlider" destination="Oni-on-rAW" id="LWL-Wp-MUK"/>
@@ -58,14 +58,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C1A-Ml-UXb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-685" y="158"/>
+            <point key="canvasLocation" x="-686.25954198473278" y="157.74647887323945"/>
         </scene>
         <!--News View Controller-->
         <scene sceneID="ozg-Cy-a3T">
             <objects>
                 <viewController id="Vsm-lr-0br" customClass="NewsViewController" customModule="Paboda_Senevirathne_FE_8927315" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kMZ-RR-SZa">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="peh-Jw-u8X"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -74,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tw-qb-sGD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2300" y="177"/>
+            <point key="canvasLocation" x="-1396" y="926"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="Ct6-jC-WwF">
@@ -111,18 +111,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="newspaper" catalog="system"/>
+                                <connections>
+                                    <segue destination="RWK-Gy-enw" kind="show" id="Osd-gp-XHT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Syc-pU-SOp">
                                 <rect key="frame" x="171" y="739" width="52" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="map" catalog="system"/>
+                                <connections>
+                                    <segue destination="RWK-Gy-enw" kind="show" id="E1v-PZ-sye"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbu-OQ-UWL">
                                 <rect key="frame" x="273" y="739" width="53" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="cloud" catalog="system"/>
+                                <connections>
+                                    <segue destination="RWK-Gy-enw" kind="show" id="A3n-vW-ShR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v6r-QZ-geP"/>
@@ -131,12 +140,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3R-2w-7qr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1005.3435114503816" y="-1151.4084507042255"/>
+            <point key="canvasLocation" x="-1305" y="-794"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Bl5-H8-fxf">
             <objects>
                 <tabBarController id="RWK-Gy-enw" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="bAc-qK-wKT"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="h2o-Kx-Bo9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -157,11 +167,11 @@
             <objects>
                 <viewController id="zoi-Q8-aM5" customClass="WeatherViewController" customModule="Paboda_Senevirathne_FE_8927315" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0zU-7c-wDZ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNT-zq-Kko">
-                                <rect key="frame" x="45.666666666666657" y="624.66666666666663" width="105" height="29"/>
+                                <rect key="frame" x="45.666666666666657" y="572.66666666666663" width="105" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="105" id="L8U-iA-Ftx"/>
                                     <constraint firstAttribute="height" constant="29" id="nXB-Rk-tGB"/>
@@ -171,7 +181,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XyX-Nx-Lxz">
-                                <rect key="frame" x="122.66666666666669" y="472" width="148" height="61"/>
+                                <rect key="frame" x="122.66666666666669" y="437.66666666666669" width="148" height="61"/>
                                 <color key="backgroundColor" red="0.70588235290000001" green="0.78039215689999997" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="148" id="HIE-35-wQV"/>
@@ -182,7 +192,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPW-v0-paa">
-                                <rect key="frame" x="85.666666666666686" y="254" width="222" height="29"/>
+                                <rect key="frame" x="85.666666666666686" y="238.33333333333334" width="222" height="29.000000000000028"/>
                                 <color key="backgroundColor" red="0.70588235290000001" green="0.78039215689999997" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="222" id="9Wm-XC-3pV"/>
@@ -193,7 +203,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wind :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMJ-kr-SeL">
-                                <rect key="frame" x="45.666666666666657" y="688.33333333333337" width="66" height="29"/>
+                                <rect key="frame" x="45.666666666666657" y="631.33333333333337" width="66" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="66" id="JSp-iX-ThO"/>
                                     <constraint firstAttribute="height" constant="29" id="vAE-Hf-o4f"/>
@@ -203,7 +213,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbP-Ds-sOb">
-                                <rect key="frame" x="166" y="624.66666666666663" width="179" height="29"/>
+                                <rect key="frame" x="166" y="572.66666666666663" width="179" height="29"/>
                                 <color key="backgroundColor" red="0.70588235290000001" green="0.78039215689999997" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="HwV-VM-mWu"/>
@@ -214,7 +224,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2Y-dG-Kec">
-                                <rect key="frame" x="126.66666666666669" y="688.33333333333337" width="179" height="29"/>
+                                <rect key="frame" x="126.66666666666669" y="631.33333333333337" width="179" height="29"/>
                                 <color key="backgroundColor" red="0.70588235290000001" green="0.78039215689999997" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="179" id="11L-SY-s2o"/>
@@ -225,7 +235,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gOu-87-l6n">
-                                <rect key="frame" x="130" y="308" width="131" height="133"/>
+                                <rect key="frame" x="130" y="284" width="131" height="133"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="131" id="50X-JV-NSx"/>
                                     <constraint firstAttribute="height" constant="133" id="Lnk-di-kSE"/>
@@ -239,7 +249,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npP-Ob-srt">
-                                <rect key="frame" x="85.666666666666686" y="184" width="222" height="36"/>
+                                <rect key="frame" x="85.666666666666686" y="173.66666666666666" width="222" height="36"/>
                                 <color key="backgroundColor" red="0.70588235290000001" green="0.78039215689999997" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="0CL-UE-Zlo"/>
@@ -280,7 +290,7 @@
                             <constraint firstItem="bNT-zq-Kko" firstAttribute="centerY" secondItem="0zU-7c-wDZ" secondAttribute="centerY" multiplier="1.5" id="vcO-A2-X6f"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Weather" id="Qy7-LK-8mB"/>
+                    <tabBarItem key="tabBarItem" title="Weather" image="cloud" catalog="system" id="Qy7-LK-8mB"/>
                     <connections>
                         <outlet property="changeCityButton" destination="zT3-Iw-ec8" id="mDZ-KU-XBV"/>
                         <outlet property="cityName" destination="npP-Ob-srt" id="Iaw-Xp-Ckh"/>
@@ -299,10 +309,10 @@
         <scene sceneID="sfN-AB-1rg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HbZ-BO-9cL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" id="vuR-Lb-fWZ"/>
+                    <tabBarItem key="tabBarItem" title="News" image="newspaper" catalog="system" id="vuR-Lb-fWZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="in6-Wf-Lxm">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -315,6 +325,9 @@
             <point key="canvasLocation" x="-1396" y="168"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Osd-gp-XHT"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="cloud" catalog="system" width="128" height="87"/>
         <image name="map" catalog="system" width="128" height="112"/>

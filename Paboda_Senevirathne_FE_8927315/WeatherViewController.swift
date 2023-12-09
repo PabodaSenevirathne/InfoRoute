@@ -22,8 +22,8 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate{
     
     @IBOutlet weak var weatherIcon: UIImageView!
     
-    
     @IBOutlet weak var changeCityButton: UIButton!
+    
     
     // Create a CLLocationManager instance
     let locationManager = CLLocationManager()
