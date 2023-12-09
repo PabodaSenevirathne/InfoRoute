@@ -93,12 +93,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBp-ma-tNE">
-                                <rect key="frame" x="301" y="72" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="+"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My  Final" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Bf-aQ-Luc">
                                 <rect key="frame" x="175" y="72" width="68" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -133,10 +127,22 @@
                                     <segue destination="RWK-Gy-enw" kind="show" id="A3n-vW-ShR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZR-rM-IDC">
+                                <rect key="frame" x="66" y="661" width="263" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Press Me to Discover the World"/>
+                                <connections>
+                                    <action selector="showPages:" destination="0Ag-ra-D3s" eventType="touchUpInside" id="Leq-9m-qa7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v6r-QZ-geP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="showPages" destination="oZR-rM-IDC" id="J5K-7t-EBd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3R-2w-7qr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -293,7 +299,7 @@
                     <tabBarItem key="tabBarItem" title="Weather" image="cloud" catalog="system" id="Qy7-LK-8mB"/>
                     <connections>
                         <outlet property="changeCityButton" destination="zT3-Iw-ec8" id="mDZ-KU-XBV"/>
-                        <outlet property="cityName" destination="npP-Ob-srt" id="Iaw-Xp-Ckh"/>
+                        <outlet property="city" destination="npP-Ob-srt" id="fxh-A7-TYT"/>
                         <outlet property="humidityLevelLabel" destination="fbP-Ds-sOb" id="RGT-lw-zto"/>
                         <outlet property="temperatureLabel" destination="XyX-Nx-Lxz" id="QhR-5Y-ozK"/>
                         <outlet property="weatherDescription" destination="OPW-v0-paa" id="nIw-6b-WFd"/>

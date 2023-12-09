@@ -18,19 +18,23 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate{
     
     @IBOutlet weak var weatherDescription: UILabel!
     
-    @IBOutlet weak var cityName: UILabel!
+    
+    @IBOutlet weak var city: UILabel!
     
     @IBOutlet weak var weatherIcon: UIImageView!
     
     @IBOutlet weak var changeCityButton: UIButton!
-    
-    
+    var cityName: String?
     // Create a CLLocationManager instance
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let cityName = cityName {
+                    // Use the cityName as needed in your MapViewController
+                    print("City Name: \(cityName)")
+                }
         // Request permission to use location services
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -159,7 +163,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate{
     
     // update weather data in the UI
     func updateWeatherData(with weatherData: Weather) {
-        cityName.text = "\(weatherData.name)"
+        city.text = "\(weatherData.name)"
         //weatherDescription.text = "\(weatherData.weather.first?.description ?? "")"
         if let description = weatherData.weather.first?.description {
                // Capitalize the first letter of the weather description

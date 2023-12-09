@@ -11,14 +11,20 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-
+    @IBOutlet weak var showPages: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func showCityAlert(_ sender: UIButton) {
+    
+    @IBAction func showPages(_ sender: UIButton) {
+        showCityAlert()
+    }
+    
+    func showCityAlert() {
             let alert = UIAlertController(title: "Enter City", message: "Please enter a city name", preferredStyle: .alert)
 
             alert.addTextField { textField in
@@ -26,13 +32,6 @@ class MainViewController: UIViewController {
             }
 
             // Add three buttons to navigate to different controllers
-            let newsAction = UIAlertAction(title: "Show News", style: .default) { [weak self] _ in
-                guard let cityName = alert.textFields?.first?.text else {
-                    return
-                }
-                self?.navigateToNewsViewController(cityName)
-            }
-
             let mapAction = UIAlertAction(title: "Show Map", style: .default) { [weak self] _ in
                 guard let cityName = alert.textFields?.first?.text else {
                     return
@@ -49,7 +48,6 @@ class MainViewController: UIViewController {
 
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
-            alert.addAction(newsAction)
             alert.addAction(mapAction)
             alert.addAction(weatherAction)
             alert.addAction(cancelAction)
@@ -58,11 +56,6 @@ class MainViewController: UIViewController {
         }
     
     
-    
-    func navigateToNewsViewController(_ cityName: String) {
-            performSegue(withIdentifier: "NewsSegue", sender: cityName)
-        }
-
         func navigateToMapViewController(_ cityName: String) {
             performSegue(withIdentifier: "MapSegue", sender: cityName)
         }
