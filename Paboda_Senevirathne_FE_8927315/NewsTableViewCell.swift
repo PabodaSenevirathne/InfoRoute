@@ -25,14 +25,14 @@ class NewsTableViewCell: UITableViewCell {
     private let newsTitleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 25, weight:.medium)
+        label.font = .systemFont(ofSize: 22, weight:.semibold)
         return label
     }()
     
     private let subTitleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .systemFont(ofSize: 18, weight:.regular)
+        label.font = .systemFont(ofSize: 17, weight:.light)
         return label
     }()
     
@@ -49,9 +49,9 @@ class NewsTableViewCell: UITableViewCell {
    
     override func layoutSubviews() {
         super.layoutSubviews()
-        newsTitleLabel.frame = CGRect(x: 10, y:0, width: contentView.frame.size.width - 200, height: 7)
-        
-        newsTitleLabel.frame = CGRect(x: 10, y:70, width: contentView.frame.size.width - 200, height: contentView.frame.size.height/2)    }
+        newsTitleLabel.frame = CGRect(x: 10, y: 0, width: contentView.frame.size.width - 20, height: contentView.frame.size.height / 2)
+            
+            subTitleLabel.frame = CGRect(x: 10, y: contentView.frame.size.height / 2, width: contentView.frame.size.width - 20, height: contentView.frame.size.height / 2)   }
     
     
     
