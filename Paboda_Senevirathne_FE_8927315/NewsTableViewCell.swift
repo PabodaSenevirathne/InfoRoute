@@ -24,12 +24,14 @@ class NewsTableViewCell: UITableViewCell {
     
     private let newsTitleLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         label.font = .systemFont(ofSize: 25, weight:.medium)
         return label
     }()
     
     private let subTitleLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         label.font = .systemFont(ofSize: 18, weight:.regular)
         return label
     }()
@@ -41,17 +43,22 @@ class NewsTableViewCell: UITableViewCell {
         contentView.addSubview(subTitleLabel)
     }
     
-    required init?(corder: NSCoder) {
+    required init?(coder: NSCoder) {
         fatalError()
     }
    
     override func layoutSubviews() {
         super.layoutSubviews()
-        newsTitleLabel.frame = CGRect(x: 19, y:0, width: contentView.frame.size.width - 120, height: contentView.frame.size.height/2)
-    }
+        newsTitleLabel.frame = CGRect(x: 10, y:0, width: contentView.frame.size.width - 200, height: 7)
+        
+        newsTitleLabel.frame = CGRect(x: 10, y:70, width: contentView.frame.size.width - 200, height: contentView.frame.size.height/2)    }
+    
+    
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        newsTitleLabel.text = nil
+        subTitleLabel.text = nil
     }
     
     func configure(with viewModel: NewsTableViewCellViewModel){
