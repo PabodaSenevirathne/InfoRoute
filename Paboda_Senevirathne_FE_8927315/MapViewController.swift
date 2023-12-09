@@ -34,7 +34,9 @@ class MapViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDe
         if let cityName = cityName {
                     // Use the cityName as needed in your MapViewController
                     print("City Name: \(cityName)")
-                }
+            updateDestinationLocation(cityName)
+            
+        }
         
             mapView.delegate = self
             locationManager.delegate = self
@@ -68,38 +70,31 @@ class MapViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDe
                 let region = MKCoordinateRegion(center: mapView.region.center, span: span)
                 mapView.setRegion(region, animated: true)    }
     
-    // Function to set up the map
-       func setTheMap() {
-           // Check if both start and destination coordinates are available
-           guard let startCoord = startLocation, let destinationCoord = destinationLocation else {
-               // Handle the case where either start or destination coordinates are not available
-               return
-           }
-           
-           // Remove existing annotations and overlays
-           mapView.removeAnnotations(mapView.annotations)
-           mapView.removeOverlays(mapView.overlays)
-           
-           // Create annotations for start and destination points
-           let startAnnotation = MKPointAnnotation()
-           startAnnotation.coordinate = startCoord
-           startAnnotation.title = "Start Point"
-           
-           let destinationAnnotation = MKPointAnnotation()
-           destinationAnnotation.coordinate = destinationCoord
-           destinationAnnotation.title = "Destination Point"
-           
-           mapView.addAnnotations([startAnnotation, destinationAnnotation])
-           
-           // Create a polyline to show the route
-           let coordinates = [startCoord, destinationCoord]
-           let polyline = MKPolyline(coordinates: coordinates, count: coordinates.count)
-           mapView.addOverlay(polyline)
-           
-           // Set the region to show both points
-           let region = MKCoordinateRegion(center: startCoord, latitudinalMeters: 5000, longitudinalMeters: 5000)
-           mapView.setRegion(region, animated: true)
-       }
+    func setTheMap() {
+            guard let startCoord = startLocation, let destinationCoord = destinationLocation else {
+                return
+            }
+
+            mapView.removeAnnotations(mapView.annotations)
+            mapView.removeOverlays(mapView.overlays)
+
+            let startAnnotation = MKPointAnnotation()
+            startAnnotation.coordinate = startCoord
+            startAnnotation.title = "Start Point"
+
+            let destinationAnnotation = MKPointAnnotation()
+            destinationAnnotation.coordinate = destinationCoord
+            destinationAnnotation.title = "Destination Point"
+
+            mapView.addAnnotations([startAnnotation, destinationAnnotation])
+
+            let coordinates = [startCoord, destinationCoord]
+            let polyline = MKPolyline(coordinates: coordinates, count: coordinates.count)
+            mapView.addOverlay(polyline)
+
+            let region = MKCoordinateRegion(center: startCoord, latitudinalMeters: 5000, longitudinalMeters: 5000)
+            mapView.setRegion(region, animated: true)
+        }
 
     // Function to render overlay (polyline) on the map
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -117,55 +112,52 @@ class MapViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDe
     }
     
     //Function to present an alert for changing the destination location
-        func changeLocation() {
+    func changeLocation() {
             let alertController = UIAlertController(title: "Change Destination Location", message: "Enter a new city or coordinates", preferredStyle: .alert)
-            
+
             alertController.addTextField { textField in
                 textField.placeholder = "City or Coordinates"
             }
-            
+
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            
+
             let submitAction = UIAlertAction(title: "Submit", style: .default) { [weak self, weak alertController] _ in
                 guard let locationText = alertController?.textFields?.first?.text else {
                     return
                 }
-                // Convert the locationText to coordinates or handle city name
                 self?.updateDestinationLocation(locationText)
             }
-            
+
             alertController.addAction(cancelAction)
             alertController.addAction(submitAction)
-            
+
             present(alertController, animated: true, completion: nil)
         }
     
     
     // Function to update the destination location based on user input
-       func updateDestinationLocation(_ locationText: String) {
-           let geocoder = CLGeocoder()
-           
-           geocoder.geocodeAddressString(locationText) { [weak self] (placemarks, error) in
-               if let error = error {
-                   print("Geocoding error: \(error.localizedDescription)")
-                   return
-               }
-               
-               guard let placemark = placemarks?.first,
-                     let newDestinationLocation = placemark.location?.coordinate else {
-                   print("No valid location found.")
-                   return
-               }
-               
-               if newDestinationLocation.latitude == 0 || newDestinationLocation.longitude == 0 {
-                   print("Invalid coordinates: Latitude or longitude is zero.")
-                   return
-               }
-               
-               self?.destinationLocation = newDestinationLocation
-               self?.setTheMap() // Refresh the map with the new destination location
-           }
-       }
-    
-    
+    func updateDestinationLocation(_ locationText: String) {
+            let geocoder = CLGeocoder()
+
+            geocoder.geocodeAddressString(locationText) { [weak self] (placemarks, error) in
+                if let error = error {
+                    print("Geocoding error: \(error.localizedDescription)")
+                    return
+                }
+
+                guard let placemark = placemarks?.first,
+                      let newDestinationLocation = placemark.location?.coordinate else {
+                    print("No valid location found.")
+                    return
+                }
+
+                if newDestinationLocation.latitude == 0 || newDestinationLocation.longitude == 0 {
+                    print("Invalid coordinates: Latitude or longitude is zero.")
+                    return
+                }
+
+                self?.destinationLocation = newDestinationLocation
+                self?.setTheMap()
+            }
+        }
 }
