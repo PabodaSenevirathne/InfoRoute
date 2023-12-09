@@ -33,7 +33,9 @@ class MapViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDe
             locationManager.delegate = self
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
-        }
+        // Set initial slider value and call the function to update map region
+                mapSlider.value = 0.5
+                sliderChanged(mapSlider)        }
     
     // CLLocationManagerDelegate method to get the current location
        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -51,6 +53,13 @@ class MapViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDe
            setTheMap()
        }
     
+    @IBAction func sliderChanged(_ sender: UISlider) {
+        // Calculate the new span for latitude and longitude based on slider value
+                let span = MKCoordinateSpan(latitudeDelta: 180 * Double(sender.value), longitudeDelta: 360 * Double(sender.value))
+
+                // Update the map's region
+                let region = MKCoordinateRegion(center: mapView.region.center, span: span)
+                mapView.setRegion(region, animated: true)    }
     
     // Function to set up the map
        func setTheMap() {

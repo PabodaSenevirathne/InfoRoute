@@ -41,6 +41,9 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Oni-on-rAW">
                                 <rect key="frame" x="14" y="129" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="96k-cb-B0G" eventType="valueChanged" id="e43-4F-oCG"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zbr-Pv-1SO"/>
