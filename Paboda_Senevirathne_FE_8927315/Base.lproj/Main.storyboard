@@ -50,6 +50,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="TVV-yM-Bfo"/>
+                    <navigationItem key="navigationItem" id="ASJ-Ll-8lw"/>
                     <connections>
                         <outlet property="changeCity" destination="5Ya-Tc-NzQ" id="u0g-uZ-Y5K"/>
                         <outlet property="mapSlider" destination="Oni-on-rAW" id="LWL-Wp-MUK"/>
@@ -142,6 +143,8 @@
                     </view>
                     <connections>
                         <outlet property="showPages" destination="oZR-rM-IDC" id="J5K-7t-EBd"/>
+                        <segue destination="96k-cb-B0G" kind="show" identifier="MapSegue" id="Sqw-N6-ClW"/>
+                        <segue destination="zoi-Q8-aM5" kind="show" identifier="WeatherSegue" id="l6P-35-0p5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3R-2w-7qr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -297,6 +300,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Weather" image="cloud" catalog="system" id="Qy7-LK-8mB"/>
+                    <navigationItem key="navigationItem" id="YZm-4v-xgh"/>
                     <connections>
                         <outlet property="changeCityButton" destination="zT3-Iw-ec8" id="mDZ-KU-XBV"/>
                         <outlet property="city" destination="npP-Ob-srt" id="fxh-A7-TYT"/>
@@ -332,7 +336,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="l6P-35-0p5"/>
         <segue reference="Osd-gp-XHT"/>
+        <segue reference="Sqw-N6-ClW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cloud" catalog="system" width="128" height="87"/>
