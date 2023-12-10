@@ -34,12 +34,13 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate{
         if let cityName = cityName {
                     // Use the cityName as needed in your MapViewController
                     print("City Name: \(cityName)")
+            getWeatherForCity(cityName)
         }
         // Request permission to use location services
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
+        //locationManager.delegate = self
+        //locationManager.requestWhenInUseAuthorization()
         // Start updating location
-        locationManager.startUpdatingLocation()
+        //locationManager.startUpdatingLocation()
         
         // getWeatherAPI()
     }
