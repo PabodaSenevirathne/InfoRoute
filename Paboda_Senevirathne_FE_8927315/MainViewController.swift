@@ -34,6 +34,7 @@ class MainViewController: UIViewController {
     
     
     @IBAction func goToNews(_ sender: UIButton) {
+        navigateToNewsViewController()
     }
     
     

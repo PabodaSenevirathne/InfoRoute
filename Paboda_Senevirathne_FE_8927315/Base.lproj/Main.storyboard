@@ -136,7 +136,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="goToNews:" destination="0Ag-ra-D3s" eventType="touchUpInside" id="ixt-A5-ojV"/>
-                                    <segue destination="bpB-h8-IUu" kind="show" id="Fkn-69-kfE"/>
+                                    <segue destination="bpB-h8-IUu" kind="show" id="MTG-d1-mJ6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Syc-pU-SOp">
@@ -189,6 +189,7 @@
                         <outlet property="showPages" destination="oZR-rM-IDC" id="J5K-7t-EBd"/>
                         <segue destination="96k-cb-B0G" kind="show" identifier="MapSegue" id="Sqw-N6-ClW"/>
                         <segue destination="zoi-Q8-aM5" kind="show" identifier="WeatherSegue" id="l6P-35-0p5"/>
+                        <segue destination="HbZ-BO-9cL" kind="show" identifier="NewsSegue" id="0r7-Nr-6dQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3R-2w-7qr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -354,6 +355,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HbZ-BO-9cL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News" image="newspaper" catalog="system" id="vuR-Lb-fWZ"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Fej-yb-fl6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="in6-Wf-Lxm">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -390,6 +392,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="0r7-Nr-6dQ"/>
         <segue reference="l6P-35-0p5"/>
         <segue reference="Sqw-N6-ClW"/>
     </inferredMetricsTieBreakers>
