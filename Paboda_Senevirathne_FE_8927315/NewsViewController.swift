@@ -23,6 +23,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(changeCity))
         
         API.shared.getTopStories{[weak self] result in
             switch result{
@@ -43,6 +44,31 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                                  
         }
     }
+    
+    
+    @objc private func changeCity(){
+        let alertController = UIAlertController(title: "Change City", message: "Enter a new city name", preferredStyle: .alert)
+
+            alertController.addTextField { textField in
+                textField.placeholder = "City Name"
+            }
+
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+            let submitAction = UIAlertAction(title: "Submit", style: .default) { [weak self, weak alertController] _ in
+                guard let cityName = alertController?.textFields?.first?.text else {
+                    return
+                }
+                // Use the new city name and update the data
+                //self?.cityName = cityName
+                //self?.fetchNewsForCity(cityName)
+            }
+
+            alertController.addAction(cancelAction)
+            alertController.addAction(submitAction)
+
+            present(alertController, animated: true, completion: nil)    }
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
