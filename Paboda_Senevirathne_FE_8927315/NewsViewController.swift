@@ -16,10 +16,10 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }()
     
     private var viewModels = [NewsTableViewCellViewModel]()
-
+    var cityName: String? // Add this property to store the received city name
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "news"
+        title = "Local News"
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
@@ -44,6 +44,10 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                                  
         }
     }
+    
+    
+    
+    
     
     
     @objc private func changeCity(){

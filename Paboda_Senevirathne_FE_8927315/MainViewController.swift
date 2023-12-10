@@ -87,11 +87,20 @@ class MainViewController: UIViewController {
                 }
                 self?.navigateToWeatherViewController(cityName)
             }
+        
+        
+            let newsAction = UIAlertAction(title: "Show News", style: .default) { [weak self] _ in
+                guard let cityName = alert.textFields?.first?.text else {
+                    return
+                }
+                self?.navigateToNewsViewController(cityName)
+            }
 
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
             alert.addAction(mapAction)
             alert.addAction(weatherAction)
+            alert.addAction(newsAction)
             alert.addAction(cancelAction)
 
             present(alert, animated: true, completion: nil)
@@ -106,7 +115,9 @@ class MainViewController: UIViewController {
             performSegue(withIdentifier: "WeatherSegue", sender: cityName)
         }
 
-    
+        func navigateToNewsViewController(_ cityName: String) {
+            performSegue(withIdentifier: "NewsSegue", sender: cityName)
+        }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if let cityName = sender as? String {
@@ -118,6 +129,12 @@ class MainViewController: UIViewController {
                 case "WeatherSegue":
                     if let weatherViewController = segue.destination as? WeatherViewController {
                        weatherViewController.cityName = cityName
+            
+                    }
+                case "NewsSegue":
+                    if let newsViewController = segue.destination as?
+                        NewsViewController {
+                       newsViewController.cityName = cityName
             
                     }
                 default:
