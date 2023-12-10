@@ -30,7 +30,8 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self?.viewModels = articles.compactMap({
                     NewsTableViewCellViewModel(
                         title: $0.title,
-                        subtitle: $0.description ?? "No Description")
+                        subtitle: $0.description ?? "No Description",
+                        author: $0.author ?? "No Author")
                 })
                 
                 DispatchQueue.main.async {
@@ -69,7 +70,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-     return 150
+     return 200
     }
     
 
