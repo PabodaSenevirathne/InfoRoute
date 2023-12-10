@@ -109,14 +109,28 @@
                     <view key="view" contentMode="scaleToFill" id="kMZ-RR-SZa">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EPc-aP-38U">
+                                <rect key="frame" x="0.0" y="115" width="393" height="553"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="393" id="Z28-wD-jXd"/>
+                                    <constraint firstAttribute="height" constant="553" id="kuP-rD-gQr"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="peh-Jw-u8X"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EPc-aP-38U" firstAttribute="centerY" secondItem="kMZ-RR-SZa" secondAttribute="centerY" id="7OG-WY-KZd"/>
+                            <constraint firstItem="EPc-aP-38U" firstAttribute="centerX" secondItem="kMZ-RR-SZa" secondAttribute="centerX" id="msp-8Y-3js"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="C34-Q0-FjO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tw-qb-sGD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1396" y="926"/>
+            <point key="canvasLocation" x="-1396.1832061068701" y="925.35211267605644"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="Ct6-jC-WwF">
@@ -220,11 +234,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0sr-ME-Egb">
-                                <rect key="frame" x="27.666666666666657" y="153" width="338" height="555"/>
+                                <rect key="frame" x="27.666666666666657" y="142.66666666666663" width="338" height="576"/>
                                 <color key="backgroundColor" red="0.023529411764705882" green="0.10980392156862745" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="555" id="auj-bd-DE7"/>
-                                    <constraint firstAttribute="width" constant="338" id="uEq-Va-4mm"/>
+                                    <constraint firstAttribute="height" constant="576" id="TGu-ON-AvE"/>
+                                    <constraint firstAttribute="width" constant="338" id="zrk-dC-owU"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNT-zq-Kko">
@@ -342,15 +356,15 @@
                             <constraint firstItem="XyX-Nx-Lxz" firstAttribute="centerY" secondItem="0zU-7c-wDZ" secondAttribute="centerY" constant="76.5" id="0sW-2C-IA4"/>
                             <constraint firstItem="q2Y-dG-Kec" firstAttribute="centerX" secondItem="0zU-7c-wDZ" secondAttribute="centerX" multiplier="1.1" id="6nA-0h-0xj"/>
                             <constraint firstItem="OPW-v0-paa" firstAttribute="centerY" secondItem="0zU-7c-wDZ" secondAttribute="centerY" multiplier="0.45" constant="76.799999999999983" id="7AN-ec-e2r"/>
-                            <constraint firstItem="0sr-ME-Egb" firstAttribute="centerX" secondItem="0zU-7c-wDZ" secondAttribute="centerX" id="BYO-7F-eyt"/>
                             <constraint firstItem="gOu-87-l6n" firstAttribute="centerX" secondItem="0zU-7c-wDZ" secondAttribute="centerX" constant="-1" id="CCV-BB-yRs"/>
                             <constraint firstItem="OPW-v0-paa" firstAttribute="centerX" secondItem="0zU-7c-wDZ" secondAttribute="centerX" id="DxH-iL-JRj"/>
                             <constraint firstItem="CMJ-kr-SeL" firstAttribute="centerX" secondItem="0zU-7c-wDZ" secondAttribute="centerX" multiplier="0.4" id="HAP-xQ-CVg"/>
                             <constraint firstItem="q2Y-dG-Kec" firstAttribute="centerY" secondItem="0zU-7c-wDZ" secondAttribute="centerY" multiplier="1.65" id="Hzu-4p-lPc"/>
-                            <constraint firstItem="0sr-ME-Egb" firstAttribute="centerY" secondItem="0zU-7c-wDZ" secondAttribute="centerY" multiplier="1.1" id="MsO-Ki-BZM"/>
                             <constraint firstItem="CMJ-kr-SeL" firstAttribute="centerY" secondItem="0zU-7c-wDZ" secondAttribute="centerY" multiplier="1.65" id="N9C-CT-vEo"/>
                             <constraint firstItem="bNT-zq-Kko" firstAttribute="centerX" secondItem="0zU-7c-wDZ" secondAttribute="centerX" multiplier="0.5" id="UU3-XS-lgY"/>
                             <constraint firstItem="npP-Ob-srt" firstAttribute="centerY" secondItem="0zU-7c-wDZ" secondAttribute="centerY" multiplier="0.3" constant="74.200000000000003" id="Up8-cW-22o"/>
+                            <constraint firstItem="0sr-ME-Egb" firstAttribute="centerY" secondItem="0zU-7c-wDZ" secondAttribute="centerY" multiplier="1.1" id="YIz-TK-ca8"/>
+                            <constraint firstItem="0sr-ME-Egb" firstAttribute="centerX" secondItem="0zU-7c-wDZ" secondAttribute="centerX" id="ayM-Pw-aaG"/>
                             <constraint firstItem="gOu-87-l6n" firstAttribute="centerY" secondItem="0zU-7c-wDZ" secondAttribute="centerY" multiplier="0.7" constant="76.300000000000011" id="ffq-ao-EpM"/>
                             <constraint firstItem="fbP-Ds-sOb" firstAttribute="centerY" secondItem="0zU-7c-wDZ" secondAttribute="centerY" multiplier="1.5" id="jct-Q6-gEj"/>
                             <constraint firstItem="XyX-Nx-Lxz" firstAttribute="centerX" secondItem="0zU-7c-wDZ" secondAttribute="centerX" id="lly-xt-Auw"/>
