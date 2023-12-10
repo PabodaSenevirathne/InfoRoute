@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ovh-Em-qsJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e05-cF-tHX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -205,12 +205,6 @@
                                     <action selector="showPages:" destination="0Ag-ra-D3s" eventType="touchUpInside" id="Leq-9m-qa7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cA-uz-qFg">
-                                <rect key="frame" x="273" y="65" width="79" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="History"/>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="Pqd-l3-xaw">
                                 <rect key="frame" x="50" y="150" width="275" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -238,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b3R-2w-7qr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-379.38931297709922" y="-794.36619718309862"/>
+            <point key="canvasLocation" x="1472.5190839694656" y="-794.36619718309862"/>
         </scene>
         <!--Weather-->
         <scene sceneID="fo0-UU-h1u">
@@ -443,25 +437,25 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="koV-II-aI9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1165.6488549618321" y="-847.18309859154931"/>
+            <point key="canvasLocation" x="3019.0839694656488" y="-847.18309859154931"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="hBd-Nk-RhG">
+        <scene sceneID="nSk-Gu-wyU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ovh-Em-qsJ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e05-cF-tHX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wJ0-St-qKL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N5d-yQ-OUv">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="0Ag-ra-D3s" kind="relationship" relationship="rootViewController" id="ofg-rx-Vs2"/>
+                        <segue destination="0Ag-ra-D3s" kind="relationship" relationship="rootViewController" id="pOX-zT-F4f"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lot-lb-3X9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sep-M1-d5A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1306.1068702290077" y="-794.36619718309862"/>
+            <point key="canvasLocation" x="545.80152671755718" y="-794.36619718309862"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
