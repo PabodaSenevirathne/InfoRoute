@@ -21,6 +21,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var goToWeather: UIButton!
     
     override func viewDidLoad() {
+        title = "My Final"
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
