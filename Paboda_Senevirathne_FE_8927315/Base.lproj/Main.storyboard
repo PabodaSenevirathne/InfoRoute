@@ -135,6 +135,7 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="goToNews:" destination="0Ag-ra-D3s" eventType="touchUpInside" id="ixt-A5-ojV"/>
                                     <segue destination="bpB-h8-IUu" kind="show" id="Fkn-69-kfE"/>
                                 </connections>
                             </button>
@@ -145,6 +146,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="map" catalog="system">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToMap:" destination="0Ag-ra-D3s" eventType="touchUpInside" id="nPd-nE-lwx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbu-OQ-UWL">
                                 <rect key="frame" x="273" y="739" width="53" height="35"/>
@@ -153,6 +157,9 @@
                                 <buttonConfiguration key="configuration" style="plain" image="cloud" catalog="system">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="goToWeather:" destination="0Ag-ra-D3s" eventType="touchUpInside" id="i90-De-w6u"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZR-rM-IDC">
                                 <rect key="frame" x="66" y="661" width="263" height="35"/>
@@ -166,16 +173,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cA-uz-qFg">
-                                <rect key="frame" x="243" y="65" width="136" height="35"/>
+                                <rect key="frame" x="273" y="65" width="79" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Search History"/>
+                                <buttonConfiguration key="configuration" style="filled" title="History"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v6r-QZ-geP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="goToMap" destination="Syc-pU-SOp" id="YJ3-TV-pWY"/>
+                        <outlet property="goToNews" destination="F3Q-8I-EUA" id="SfI-BA-a9M"/>
+                        <outlet property="goToWeather" destination="Qbu-OQ-UWL" id="oRh-3F-C1P"/>
                         <outlet property="showPages" destination="oZR-rM-IDC" id="J5K-7t-EBd"/>
                         <segue destination="96k-cb-B0G" kind="show" identifier="MapSegue" id="Sqw-N6-ClW"/>
                         <segue destination="zoi-Q8-aM5" kind="show" identifier="WeatherSegue" id="l6P-35-0p5"/>

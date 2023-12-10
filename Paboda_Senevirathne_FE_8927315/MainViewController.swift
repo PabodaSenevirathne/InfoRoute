@@ -13,6 +13,13 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var showPages: UIButton!
     
+    @IBOutlet weak var goToNews: UIButton!
+    
+    
+    @IBOutlet weak var goToMap: UIButton!
+    
+    @IBOutlet weak var goToWeather: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +30,39 @@ class MainViewController: UIViewController {
     @IBAction func showPages(_ sender: UIButton) {
         showCityAlert()
     }
+    
+    
+    
+    @IBAction func goToNews(_ sender: UIButton) {
+    }
+    
+    
+    
+    @IBAction func goToMap(_ sender: UIButton) {
+        navigateToMapViewController()
+        
+    }
+    
+    
+    @IBAction func goToWeather(_ sender: UIButton) {
+        
+        navigateToWeatherViewController()
+        
+    }
+    
+    
+    func navigateToNewsViewController() {
+            performSegue(withIdentifier: "NewsSegue", sender: nil)
+        }
+
+        func navigateToMapViewController() {
+            performSegue(withIdentifier: "MapSegue", sender: nil)
+        }
+
+        func navigateToWeatherViewController() {
+            performSegue(withIdentifier: "WeatherSegue", sender: nil)
+        }
+    
     
     func showCityAlert() {
             let alert = UIAlertController(title: "Enter City", message: "Please enter a city name", preferredStyle: .alert)
