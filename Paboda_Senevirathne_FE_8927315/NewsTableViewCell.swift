@@ -7,11 +7,13 @@
 
 import UIKit
 
+// ViewModel for the NewsTableViewCell
 class NewsTableViewCellViewModel{
     let title: String
     let subtitle: String
     let author: String
     
+    // Initialize the ViewModel with necessary data
     init(title: String, subtitle: String, author: String, imageData: Data? = nil) {
         self.title = title
         self.subtitle = subtitle
@@ -23,6 +25,7 @@ class NewsTableViewCell: UITableViewCell {
 
     static let identifier = "NewsTableViewCell"
     
+    // Labels for displaying news title, subtitle, and author
     private let newsTitleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -56,15 +59,20 @@ class NewsTableViewCell: UITableViewCell {
         fatalError()
     }
    
+    // LayoutSubviews method to set the frames of labels
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        // Set the frame for the newsLabel
         newsTitleLabel.frame = CGRect(x: 10, y: 0, width: contentView.frame.size.width - 20, height: contentView.frame.size.height / 2)
-            
-            subTitleLabel.frame = CGRect(x: 10, y: contentView.frame.size.height / 2, width: contentView.frame.size.width - 20, height: contentView.frame.size.height / 2)
+        
+        // Set the frame for the subtitleLabel
+        subTitleLabel.frame = CGRect(x: 10, y: contentView.frame.size.height / 2, width: contentView.frame.size.width - 20, height: contentView.frame.size.height / 2)
     
         // Set the frame for the authorLabel
         authorLabel.frame = CGRect(x: 10, y: 2 * contentView.frame.size.height / 3 + 30, width: contentView.frame.size.width - 20, height: contentView.frame.size.height / 3 - 10)  }
     
+    // Reset cell content when being reused
     override func prepareForReuse() {
         super.prepareForReuse()
         newsTitleLabel.text = nil

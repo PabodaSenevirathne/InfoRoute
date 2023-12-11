@@ -7,6 +7,7 @@
 
 import Foundation
 
+// Singleton instance of the API class
 final class API{
     
     
@@ -18,6 +19,7 @@ final class API{
     
     private init() {}
     
+    // Function to fetch top news stories
     public func getTopStories (completion: @escaping (Result<[Article], Error>) -> Void){
         guard let url = Constants.topHeadlinesURL else{
             
@@ -46,10 +48,11 @@ final class API{
 
 // Models
 
+// Model for the API response
 struct APIResponse: Codable{
     let articles: [Article]
 }
-
+// Model for an article
 struct Article: Codable{
     let source: Source
     let title: String

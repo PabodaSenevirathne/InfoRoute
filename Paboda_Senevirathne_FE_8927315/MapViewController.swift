@@ -22,18 +22,20 @@ class MapViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDe
     
     var cityName: String?
     
-    var startLocation: CLLocationCoordinate2D? // The original location of the phone
-    var destinationLocation: CLLocationCoordinate2D? // The destination location
+    // The start location of the phone
+    var startLocation: CLLocationCoordinate2D?
+    // The destination location
+    var destinationLocation: CLLocationCoordinate2D?
     
-    // Create a CLLocationManager instance
+    // CLLocationManager instance
       let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
             super.viewDidLoad()
         
         if let cityName = cityName {
-                    // Use the cityName as needed in your MapViewController
-                    print("City Name: \(cityName)")
+            // the cityName comes from MainViewController
+            print("City Name: \(cityName)")
             updateDestinationLocation(cityName)
             
         }
@@ -42,11 +44,11 @@ class MapViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDe
             locationManager.delegate = self
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
-        // Set initial slider value and call the function to update map region
-                mapSlider.value = 0.5
-                sliderChanged(mapSlider)
+            // Set initial slider value
+            mapSlider.value = 0.5
+            sliderChanged(mapSlider)
         
-        
+        // save data
         let context = CoreDataStack.shared.context
                 let searchItem = SearchHistoryItem(context: context)
                 searchItem.source = "Map"
@@ -56,7 +58,7 @@ class MapViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDe
                 CoreDataStack.shared.saveContext()
     }
     
-    // CLLocationManagerDelegate method to get the current location
+       // Get the current location
        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
            guard let currentLocation = locations.last?.coordinate else {
                return
@@ -66,12 +68,13 @@ class MapViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDe
            startLocation = currentLocation
            
            // Stop updating location after the first update
-          // locationManager.stopUpdatingLocation()
+           // locationManager.stopUpdatingLocation()
            
-           // Set up the map with both start and destination locations
+           // Set up the map between locations
            setTheMap()
        }
     
+    // function to slider changes
     @IBAction func sliderChanged(_ sender: UISlider) {
         // Calculate the new span for latitude and longitude based on slider value
                 let span = MKCoordinateSpan(latitudeDelta: 180 * Double(sender.value), longitudeDelta: 360 * Double(sender.value))
@@ -80,6 +83,7 @@ class MapViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDe
                 let region = MKCoordinateRegion(center: mapView.region.center, span: span)
                 mapView.setRegion(region, animated: true)    }
     
+    // Set map between two locations
     func setTheMap() {
             guard let startCoord = startLocation, let destinationCoord = destinationLocation else {
                 return
@@ -121,7 +125,7 @@ class MapViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDe
         changeLocation()
     }
     
-    //Function to present an alert for changing the destination location
+    //Function to change city name (destination)
     func changeLocation() {
             let alertController = UIAlertController(title: "Change Destination Location", message: "Enter a new city or coordinates", preferredStyle: .alert)
 
@@ -145,7 +149,7 @@ class MapViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDe
         }
     
     
-    // Function to update the destination location based on user input
+    // Update the destination location based on user input
     func updateDestinationLocation(_ locationText: String) {
             let geocoder = CLGeocoder()
 

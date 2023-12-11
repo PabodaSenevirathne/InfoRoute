@@ -18,32 +18,26 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate{
     
     @IBOutlet weak var weatherDescription: UILabel!
     
-    
     @IBOutlet weak var city: UILabel!
     
     @IBOutlet weak var weatherIcon: UIImageView!
     
     @IBOutlet weak var changeCityButton: UIButton!
+    
     var cityName: String?
-    // Create a CLLocationManager instance
+    // CLLocationManager instance
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let cityName = cityName {
-                    // Use the cityName as needed in your MapViewController
-                    print("City Name: \(cityName)")
+            // Use the cityName cames from the MainViewController
+            print("City Name: \(cityName)")
             getWeatherForCity(cityName)
         }
-        // Request permission to use location services
-        //locationManager.delegate = self
-        //locationManager.requestWhenInUseAuthorization()
-        // Start updating location
-        //locationManager.startUpdatingLocation()
         
-        // getWeatherAPI()
-        
+        // save data
         let context = CoreDataStack.shared.context
                 let searchItem = SearchHistoryItem(context: context)
                 searchItem.source = "Weather"
@@ -65,7 +59,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate{
         
         }
     
-    // get error message if there is an error obtaining location data
+    // print error message if there is an error obtaining location data
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
     {
         
@@ -73,6 +67,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate{
         
     }
     
+    // function to change city
     @IBAction func changeCity(_ sender: UIButton) {
         let alertController = UIAlertController(title: "Change City", message: "Enter a new city name", preferredStyle: .alert)
 
@@ -94,7 +89,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate{
 
                 present(alertController, animated: true, completion: nil)    }
     
-    
+    // get weather according to the city
     func getWeatherForCity(_ city: String) {
             guard let encodedCity = city.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
                 print("Error encoding city name")
@@ -127,6 +122,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate{
 
             task.resume()
         }
+    
     // get weather data
     func getWeatherAPI(for coordinates: CLLocationCoordinate2D){
                 
@@ -139,12 +135,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate{
         
         let task = URLSession.shared.dataTask(with: url) {
             data, response, error in
-            
-            //print(data!)
-            //if let data = data, let string = String(data: data, encoding: .utf8){
-            //    print(string)
-            // }
-            
+                        
             if let data = data {
                 let jsonDecorder = JSONDecoder()
                 
@@ -186,8 +177,8 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate{
         windSpeedLabel.text = "\(weatherData.wind.speed) m/s"
         
         // Load image
-               if let iconName = weatherData.weather.first?.icon {
-                   loadImageURL(iconName)
+        if let iconName = weatherData.weather.first?.icon {
+            loadImageURL(iconName)
                }
     }
     
@@ -209,8 +200,6 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate{
             }
             
             task.resume()
-        
         }
     }
-
 }

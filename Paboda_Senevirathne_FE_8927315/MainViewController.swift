@@ -21,37 +21,36 @@ class MainViewController: UIViewController {
     @IBOutlet weak var goToWeather: UIButton!
     
     override func viewDidLoad() {
+        // add titile to the page
         title = "My Final"
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     
+    // trigger showCityAlert function
     @IBAction func showPages(_ sender: UIButton) {
         showCityAlert()
     }
     
     
-    
+    // function to go news scene
     @IBAction func goToNews(_ sender: UIButton) {
         navigateToNewsViewController()
     }
     
     
-    
+    // function to go map scene
     @IBAction func goToMap(_ sender: UIButton) {
         navigateToMapViewController()
         
     }
     
-    
+    // function to go weather scene
     @IBAction func goToWeather(_ sender: UIButton) {
         
         navigateToWeatherViewController()
         
     }
-    
     
     func navigateToNewsViewController() {
             performSegue(withIdentifier: "NewsSegue", sender: nil)
@@ -65,7 +64,6 @@ class MainViewController: UIViewController {
             performSegue(withIdentifier: "WeatherSegue", sender: nil)
         }
     
-    
     func showCityAlert() {
             let alert = UIAlertController(title: "Enter City", message: "Please enter a city name", preferredStyle: .alert)
 
@@ -73,7 +71,7 @@ class MainViewController: UIViewController {
                 textField.placeholder = "City Name"
             }
 
-            // Add three buttons to navigate to different controllers
+            // Add buttons to navigate to different controllers
             let mapAction = UIAlertAction(title: "Show Map", style: .default) { [weak self] _ in
                 guard let cityName = alert.textFields?.first?.text else {
                     return
@@ -119,6 +117,7 @@ class MainViewController: UIViewController {
             performSegue(withIdentifier: "NewsSegue", sender: cityName)
         }
     
+    // set and send city data to other controllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if let cityName = sender as? String {
                 switch segue.identifier {
