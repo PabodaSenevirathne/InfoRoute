@@ -6,41 +6,78 @@
 //
 
 import UIKit
+import CoreData
 
 class HistoryTableViewController: UITableViewController {
     
-
+    var searchHistory: [SearchHistoryItem] = []
+    
+    lazy var context: NSManagedObjectContext = {
+            return CoreDataStack.shared.context
+        }()
+    
     override func viewDidLoad() {
+        title = "Search History"
         super.viewDidLoad()
-
+        
+        // Register the cell class for the reuse identifier
+            tableView.register(HistoryTableViewCell.self, forCellReuseIdentifier: "HistoryCell")
+        fetchSearchHistory()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
+    func fetchSearchHistory() {
+            let fetchRequest: NSFetchRequest<SearchHistoryItem> = SearchHistoryItem.fetchRequest()
+            do {
+                searchHistory = try context.fetch(fetchRequest)
+                tableView.reloadData()
+            } catch {
+                print("Error fetching search history: \(error.localizedDescription)")
+            }
+        }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+        return searchHistory.count    }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+            let historyItem = searchHistory[indexPath.row]
 
-        // Configure the cell...
+            // Customize the cell based on the interaction type
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath)
 
-        return cell
-    }
-    */
+            if let interactionType = historyItem.type {
+                switch interactionType {
+                case "News":
+                    cell.textLabel?.text = historyItem.type
+                    // Customize cell further if needed
+                case "Weather":
+                    cell.textLabel?.text = historyItem.type
+                    cell.textLabel?.text = "Temparature: \(historyItem.temperature)"
+                    // Customize cell further if needed
+                case "Map":
+                    cell.textLabel?.text = "Map Interaction: \(historyItem.mapStartPoint ?? "") to \(historyItem.mapEndPoint ?? "")"
+                    // Customize cell further if needed
+                default:
+                    cell.textLabel?.text = "Unknown Interaction Type"
+                }
+            }
+
+            return cell
+        }
+    
 
     /*
     // Override to support conditional editing of the table view.

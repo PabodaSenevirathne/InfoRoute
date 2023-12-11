@@ -183,13 +183,14 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZR-rM-IDC">
                                 <rect key="frame" x="55.333333333333343" y="664" width="263" height="35"/>
+                                <color key="backgroundColor" red="0.58039215690000001" green="0.78823529410000004" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="TKb-3F-AV5"/>
                                     <constraint firstAttribute="width" constant="263" id="mMU-9p-4Rf"/>
                                 </constraints>
                                 <color key="tintColor" red="0.58039215690000001" green="0.78823529410000004" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Press Me to Discover the World">
+                                <buttonConfiguration key="configuration" style="plain" title="Press Me to Discover the World">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -237,10 +238,10 @@
             </objects>
             <point key="canvasLocation" x="4037.4045801526718" y="-1033.0985915492959"/>
         </scene>
-        <!--Table View Controller-->
+        <!--History Table View Controller-->
         <scene sceneID="CcE-PW-2Uq">
             <objects>
-                <tableViewController id="8US-bg-MtU" sceneMemberID="viewController">
+                <tableViewController id="8US-bg-MtU" customClass="HistoryTableViewController" customModule="Paboda_Senevirathne_FE_8927315" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1bM-kk-nui">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -496,7 +497,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="l6P-35-0p5"/>
-        <segue reference="fk8-LS-uPR"/>
+        <segue reference="90s-OK-Jl9"/>
         <segue reference="Sqw-N6-ClW"/>
     </inferredMetricsTieBreakers>
     <resources>

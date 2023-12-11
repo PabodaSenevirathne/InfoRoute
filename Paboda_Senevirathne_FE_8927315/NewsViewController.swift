@@ -43,6 +43,14 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
                                  
         }
+        
+        let context = CoreDataStack.shared.context
+                let searchItem = SearchHistoryItem(context: context)
+                searchItem.source = "News"
+                searchItem.type = "News"
+                searchItem.newsTitle = "First story: \(title)"
+                CoreDataStack.shared.saveContext()
+        
     }
     
     

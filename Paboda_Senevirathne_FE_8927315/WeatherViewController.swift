@@ -43,7 +43,13 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate{
         //locationManager.startUpdatingLocation()
         
         // getWeatherAPI()
-    }
+        
+        let context = CoreDataStack.shared.context
+                let searchItem = SearchHistoryItem(context: context)
+                searchItem.source = "Weather"
+                searchItem.type = "Weather"
+                searchItem.cityName = "Weather: \(cityName)"
+                CoreDataStack.shared.saveContext()    }
     
     // Get new location data
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

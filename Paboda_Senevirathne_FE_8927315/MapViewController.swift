@@ -44,7 +44,17 @@ class MapViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDe
             locationManager.startUpdatingLocation()
         // Set initial slider value and call the function to update map region
                 mapSlider.value = 0.5
-                sliderChanged(mapSlider)        }
+                sliderChanged(mapSlider)
+        
+        
+        let context = CoreDataStack.shared.context
+                let searchItem = SearchHistoryItem(context: context)
+                searchItem.source = "Map"
+                searchItem.type = "Map"
+                searchItem.mapStartPoint = "Start Point: \(startLocation)"
+                searchItem.mapEndPoint = "End Point: \(destinationLocation)"
+                CoreDataStack.shared.saveContext()
+    }
     
     // CLLocationManagerDelegate method to get the current location
        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
