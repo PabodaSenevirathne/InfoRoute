@@ -65,8 +65,6 @@ class HistoryTableViewController: UITableViewController {
                     // Customize cell further if needed
                 case "Weather":
                     cell.textLabel?.text = historyItem.type
-                    cell.textLabel?.text = "Temparature: \(historyItem.temperature)"
-                    // Customize cell further if needed
                 case "Map":
                     cell.textLabel?.text = "Map Interaction: \(historyItem.mapStartPoint ?? "") to \(historyItem.mapEndPoint ?? "")"
                     // Customize cell further if needed
@@ -76,6 +74,29 @@ class HistoryTableViewController: UITableViewController {
             }
 
             return cell
+        }
+    
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+     return 100
+    }
+    
+    
+    // MARK: - Table view delegate
+
+        override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+                // Delete the row from the data source
+                let deletedItem = searchHistory.remove(at: indexPath.row)
+                context.delete(deletedItem)
+
+                do {
+                    try context.save()
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                } catch {
+                    print("Error deleting item: \(error.localizedDescription)")
+                }
+            }
         }
     
 
