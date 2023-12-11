@@ -49,9 +49,12 @@
                                     <action selector="changeCity:" destination="96k-cb-B0G" eventType="touchUpInside" id="A1W-q4-X8m"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Oni-on-rAW">
-                                <rect key="frame" x="14" y="157" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Oni-on-rAW">
+                                <rect key="frame" x="9.6666666666666572" y="156" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="Ta7-xl-uIN"/>
+                                    <constraint firstAttribute="width" constant="370" id="Xje-zI-VoE"/>
+                                </constraints>
                                 <connections>
                                     <action selector="sliderChanged:" destination="96k-cb-B0G" eventType="valueChanged" id="e43-4F-oCG"/>
                                 </connections>
@@ -104,6 +107,7 @@
                         <viewLayoutGuide key="safeArea" id="Zbr-Pv-1SO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Oni-on-rAW" firstAttribute="centerX" secondItem="SFj-Zd-ORI" secondAttribute="centerX" id="0qw-GT-eLc"/>
                             <constraint firstItem="5Ya-Tc-NzQ" firstAttribute="centerY" secondItem="SFj-Zd-ORI" secondAttribute="centerY" multiplier="0.25" id="7hp-CR-Aqi"/>
                             <constraint firstItem="Naj-Yd-kdU" firstAttribute="centerY" secondItem="SFj-Zd-ORI" secondAttribute="centerY" multiplier="0.5" id="9hS-M0-ZqS"/>
                             <constraint firstItem="Naj-Yd-kdU" firstAttribute="centerX" secondItem="SFj-Zd-ORI" secondAttribute="centerX" multiplier="0.8" id="A1q-nj-CFw"/>
@@ -112,6 +116,7 @@
                             <constraint firstItem="bWS-iF-qQe" firstAttribute="centerX" secondItem="SFj-Zd-ORI" secondAttribute="centerX" multiplier="0.6" id="I5f-3K-YQf"/>
                             <constraint firstItem="bWS-iF-qQe" firstAttribute="centerY" secondItem="SFj-Zd-ORI" secondAttribute="centerY" multiplier="0.25" id="Itz-pE-6Od"/>
                             <constraint firstItem="5Ya-Tc-NzQ" firstAttribute="centerX" secondItem="SFj-Zd-ORI" secondAttribute="centerX" multiplier="1.4" id="SrM-B8-H0h"/>
+                            <constraint firstItem="Oni-on-rAW" firstAttribute="centerY" secondItem="SFj-Zd-ORI" secondAttribute="centerY" multiplier="0.4" id="Xai-cf-uuS"/>
                             <constraint firstItem="fcV-tg-kdd" firstAttribute="centerY" secondItem="SFj-Zd-ORI" secondAttribute="centerY" multiplier="0.5" id="fho-9w-X0l"/>
                             <constraint firstItem="fcV-tg-kdd" firstAttribute="centerX" secondItem="SFj-Zd-ORI" secondAttribute="centerX" multiplier="0.2" id="hax-f2-8VC"/>
                             <constraint firstItem="mHX-e6-J9j" firstAttribute="centerX" secondItem="SFj-Zd-ORI" secondAttribute="centerX" id="jGj-EC-W27"/>
@@ -515,15 +520,15 @@
             </objects>
             <point key="canvasLocation" x="2127" y="-1061"/>
         </scene>
-        <!--Item-->
+        <!--News-->
         <scene sceneID="bXv-MK-lDY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sav-9m-w7p" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="uu9-w4-4LS"/>
+                    <tabBarItem key="tabBarItem" title="News" id="uu9-w4-4LS"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="SyD-IQ-2DF"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="llW-yx-hin">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="llW-yx-hin">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -557,7 +562,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="l6P-35-0p5"/>
-        <segue reference="fk8-LS-uPR"/>
+        <segue reference="90s-OK-Jl9"/>
         <segue reference="Sqw-N6-ClW"/>
     </inferredMetricsTieBreakers>
     <resources>
