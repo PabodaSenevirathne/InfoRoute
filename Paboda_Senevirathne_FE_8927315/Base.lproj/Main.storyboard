@@ -249,10 +249,13 @@
                                 <rect key="frame" x="50" y="150" width="275" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9V-ul-ueL">
-                                <rect key="frame" x="249" y="107" width="79" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9V-ul-ueL">
+                                <rect key="frame" x="245.33333333333337" y="114.33333333333333" width="79" height="26.999999999999986"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="4ZW-0b-1z3"/>
+                                    <constraint firstAttribute="height" constant="27" id="smf-In-51Z"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="History">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -303,11 +306,13 @@
                             <constraint firstItem="pp5-um-vew" firstAttribute="centerX" secondItem="DHm-Y3-LP2" secondAttribute="centerX" multiplier="0.95" id="Qg1-Jp-CIB"/>
                             <constraint firstItem="FQ2-6L-SAv" firstAttribute="centerY" secondItem="DHm-Y3-LP2" secondAttribute="centerY" multiplier="1.65" id="WjA-7G-W8N"/>
                             <constraint firstItem="YOa-wV-zKr" firstAttribute="centerY" secondItem="DHm-Y3-LP2" secondAttribute="centerY" multiplier="1.65" id="YPT-wZ-IdI"/>
+                            <constraint firstItem="n9V-ul-ueL" firstAttribute="centerY" secondItem="DHm-Y3-LP2" secondAttribute="centerY" multiplier="0.3" id="bFC-0y-New"/>
                             <constraint firstItem="Syc-pU-SOp" firstAttribute="centerY" secondItem="DHm-Y3-LP2" secondAttribute="centerY" multiplier="1.75" id="dPg-UI-cZu"/>
                             <constraint firstItem="YOa-wV-zKr" firstAttribute="centerX" secondItem="DHm-Y3-LP2" secondAttribute="centerX" multiplier="0.4" id="ezd-gT-hTw"/>
                             <constraint firstItem="F3Q-8I-EUA" firstAttribute="centerY" secondItem="DHm-Y3-LP2" secondAttribute="centerY" multiplier="1.75" id="ggx-AR-YD7"/>
                             <constraint firstItem="Qbu-OQ-UWL" firstAttribute="centerX" secondItem="DHm-Y3-LP2" secondAttribute="centerX" multiplier="1.5" id="k6F-Ka-iPx"/>
                             <constraint firstItem="3rH-V2-8G8" firstAttribute="centerY" secondItem="DHm-Y3-LP2" secondAttribute="centerY" multiplier="1.65" id="lsR-9o-aZI"/>
+                            <constraint firstItem="n9V-ul-ueL" firstAttribute="centerX" secondItem="DHm-Y3-LP2" secondAttribute="centerX" multiplier="1.45" id="n8y-86-iBD"/>
                             <constraint firstItem="oZR-rM-IDC" firstAttribute="centerY" secondItem="DHm-Y3-LP2" secondAttribute="centerY" multiplier="1.55" id="qG9-sE-bIg"/>
                             <constraint firstItem="Qbu-OQ-UWL" firstAttribute="centerY" secondItem="DHm-Y3-LP2" secondAttribute="centerY" multiplier="1.75" id="saB-SA-PKq"/>
                             <constraint firstItem="Syc-pU-SOp" firstAttribute="centerX" secondItem="DHm-Y3-LP2" secondAttribute="centerX" id="yri-7x-L3h"/>
