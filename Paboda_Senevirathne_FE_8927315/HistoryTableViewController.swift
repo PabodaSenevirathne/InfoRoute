@@ -60,11 +60,10 @@ class HistoryTableViewController: UITableViewController {
                 switch interactionType {
                 case "News":
                     cell.textLabel?.text = historyItem.type
-                
                 case "Weather":
                     cell.textLabel?.text = historyItem.type
                 case "Map":
-                    cell.textLabel?.text = "Map Interaction: \(historyItem.mapStartPoint ?? "") to \(historyItem.mapEndPoint ?? "")"
+                    cell.textLabel?.text = historyItem.type
                 default:
                     cell.textLabel?.text = "Unknown Interaction Type"
                 }

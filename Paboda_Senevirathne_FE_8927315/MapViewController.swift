@@ -127,7 +127,7 @@ class MapViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDe
     
     //Function to change city name (destination)
     func changeLocation() {
-            let alertController = UIAlertController(title: "Change Destination Location", message: "Enter a new city or coordinates", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Change Destination Location", message: "Enter a new city", preferredStyle: .alert)
 
             alertController.addTextField { textField in
                 textField.placeholder = "City or Coordinates"

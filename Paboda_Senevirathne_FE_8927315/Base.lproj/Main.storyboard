@@ -12,7 +12,7 @@
         <!--Map-->
         <scene sceneID="rgN-Ly-G8a">
             <objects>
-                <viewController id="96k-cb-B0G" customClass="MapViewController" customModule="Paboda_Senevirathne_FE_8927315" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Map" id="96k-cb-B0G" customClass="MapViewController" customModule="Paboda_Senevirathne_FE_8927315" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SFj-Zd-ORI">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="3547.3282442748091" y="321.83098591549299"/>
         </scene>
-        <!--News View Controller-->
+        <!--News-->
         <scene sceneID="ozg-Cy-a3T">
             <objects>
-                <viewController id="Vsm-lr-0br" customClass="NewsViewController" customModule="Paboda_Senevirathne_FE_8927315" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="News" id="Vsm-lr-0br" customClass="NewsViewController" customModule="Paboda_Senevirathne_FE_8927315" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kMZ-RR-SZa">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,10 +167,10 @@
             </objects>
             <point key="canvasLocation" x="2277" y="252"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Main-->
         <scene sceneID="Ct6-jC-WwF">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="0Ag-ra-D3s" customClass="MainViewController" customModule="Paboda_Senevirathne_FE_8927315" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Main" hidesBottomBarWhenPushed="YES" id="0Ag-ra-D3s" customClass="MainViewController" customModule="Paboda_Senevirathne_FE_8927315" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DHm-Y3-LP2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -328,10 +328,10 @@
             </objects>
             <point key="canvasLocation" x="4037.4045801526718" y="-1033.0985915492959"/>
         </scene>
-        <!--History Table View Controller-->
+        <!--History-->
         <scene sceneID="CcE-PW-2Uq">
             <objects>
-                <tableViewController id="8US-bg-MtU" customClass="HistoryTableViewController" customModule="Paboda_Senevirathne_FE_8927315" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="History" id="8US-bg-MtU" customClass="HistoryTableViewController" customModule="Paboda_Senevirathne_FE_8927315" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1bM-kk-nui">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -360,7 +360,7 @@
         <!--Weather-->
         <scene sceneID="fo0-UU-h1u">
             <objects>
-                <viewController id="zoi-Q8-aM5" customClass="WeatherViewController" customModule="Paboda_Senevirathne_FE_8927315" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Weather" id="zoi-Q8-aM5" customClass="WeatherViewController" customModule="Paboda_Senevirathne_FE_8927315" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0zU-7c-wDZ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -560,10 +560,10 @@
             </objects>
             <point key="canvasLocation" x="2127" y="-1061"/>
         </scene>
-        <!--News-->
+        <!--NewsTitle-->
         <scene sceneID="bXv-MK-lDY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sav-9m-w7p" sceneMemberID="viewController">
+                <navigationController title="NewsTitle" automaticallyAdjustsScrollViewInsets="NO" id="sav-9m-w7p" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News" id="uu9-w4-4LS"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="SyD-IQ-2DF"/>
