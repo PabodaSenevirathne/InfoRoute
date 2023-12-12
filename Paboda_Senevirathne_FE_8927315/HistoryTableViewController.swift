@@ -60,6 +60,7 @@ class HistoryTableViewController: UITableViewController {
                 switch interactionType {
                 case "News":
                     cell.textLabel?.text = historyItem.type
+                
                 case "Weather":
                     cell.textLabel?.text = historyItem.type
                 case "Map":

@@ -226,7 +226,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZR-rM-IDC">
-                                <rect key="frame" x="55.333333333333343" y="664" width="263" height="35"/>
+                                <rect key="frame" x="55.333333333333343" y="642.66666666666663" width="263" height="35"/>
                                 <color key="backgroundColor" red="0.58039215690000001" green="0.78823529410000004" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="TKb-3F-AV5"/>
@@ -241,14 +241,14 @@
                                     <action selector="showPages:" destination="0Ag-ra-D3s" eventType="touchUpInside" id="Leq-9m-qa7"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="Pqd-l3-xaw">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="Pqd-l3-xaw">
                                 <rect key="frame" x="50" y="150" width="275" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9V-ul-ueL">
                                 <rect key="frame" x="249" y="107" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.58039215690000001" green="0.78823529410000004" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="History">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -257,18 +257,54 @@
                                     <segue destination="8US-bg-MtU" kind="show" id="nmo-Hd-wi4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOa-wV-zKr">
+                                <rect key="frame" x="57" y="692.33333333333337" width="43" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="FoV-Ih-TFn"/>
+                                    <constraint firstAttribute="width" constant="43" id="wGp-5W-si1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rH-V2-8G8">
+                                <rect key="frame" x="162" y="692.33333333333337" width="69" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="BZs-Qg-Ot0"/>
+                                    <constraint firstAttribute="height" constant="21" id="oVr-YC-kRx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQ2-6L-SAv">
+                                <rect key="frame" x="262.33333333333331" y="692.33333333333337" width="65" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="N5P-nr-7rV"/>
+                                    <constraint firstAttribute="height" constant="21" id="s3g-ed-O1C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v6r-QZ-geP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="pp5-um-vew" firstAttribute="centerY" secondItem="DHm-Y3-LP2" secondAttribute="centerY" multiplier="1.25" id="4XY-iw-u96"/>
                             <constraint firstItem="oZR-rM-IDC" firstAttribute="centerX" secondItem="DHm-Y3-LP2" secondAttribute="centerX" multiplier="0.95" id="9NV-bS-EyF"/>
+                            <constraint firstItem="3rH-V2-8G8" firstAttribute="centerX" secondItem="DHm-Y3-LP2" secondAttribute="centerX" id="AFx-YW-xTF"/>
                             <constraint firstItem="F3Q-8I-EUA" firstAttribute="centerX" secondItem="DHm-Y3-LP2" secondAttribute="centerX" multiplier="0.4" id="Aft-Eq-7sI"/>
+                            <constraint firstItem="FQ2-6L-SAv" firstAttribute="centerX" secondItem="DHm-Y3-LP2" secondAttribute="centerX" multiplier="1.5" id="KJd-e4-3rg"/>
                             <constraint firstItem="pp5-um-vew" firstAttribute="centerX" secondItem="DHm-Y3-LP2" secondAttribute="centerX" multiplier="0.95" id="Qg1-Jp-CIB"/>
+                            <constraint firstItem="FQ2-6L-SAv" firstAttribute="centerY" secondItem="DHm-Y3-LP2" secondAttribute="centerY" multiplier="1.65" id="WjA-7G-W8N"/>
+                            <constraint firstItem="YOa-wV-zKr" firstAttribute="centerY" secondItem="DHm-Y3-LP2" secondAttribute="centerY" multiplier="1.65" id="YPT-wZ-IdI"/>
                             <constraint firstItem="Syc-pU-SOp" firstAttribute="centerY" secondItem="DHm-Y3-LP2" secondAttribute="centerY" multiplier="1.75" id="dPg-UI-cZu"/>
+                            <constraint firstItem="YOa-wV-zKr" firstAttribute="centerX" secondItem="DHm-Y3-LP2" secondAttribute="centerX" multiplier="0.4" id="ezd-gT-hTw"/>
                             <constraint firstItem="F3Q-8I-EUA" firstAttribute="centerY" secondItem="DHm-Y3-LP2" secondAttribute="centerY" multiplier="1.75" id="ggx-AR-YD7"/>
                             <constraint firstItem="Qbu-OQ-UWL" firstAttribute="centerX" secondItem="DHm-Y3-LP2" secondAttribute="centerX" multiplier="1.5" id="k6F-Ka-iPx"/>
-                            <constraint firstItem="oZR-rM-IDC" firstAttribute="centerY" secondItem="DHm-Y3-LP2" secondAttribute="centerY" multiplier="1.6" id="qG9-sE-bIg"/>
+                            <constraint firstItem="3rH-V2-8G8" firstAttribute="centerY" secondItem="DHm-Y3-LP2" secondAttribute="centerY" multiplier="1.65" id="lsR-9o-aZI"/>
+                            <constraint firstItem="oZR-rM-IDC" firstAttribute="centerY" secondItem="DHm-Y3-LP2" secondAttribute="centerY" multiplier="1.55" id="qG9-sE-bIg"/>
                             <constraint firstItem="Qbu-OQ-UWL" firstAttribute="centerY" secondItem="DHm-Y3-LP2" secondAttribute="centerY" multiplier="1.75" id="saB-SA-PKq"/>
                             <constraint firstItem="Syc-pU-SOp" firstAttribute="centerX" secondItem="DHm-Y3-LP2" secondAttribute="centerX" id="yri-7x-L3h"/>
                         </constraints>
@@ -562,7 +598,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="l6P-35-0p5"/>
-        <segue reference="90s-OK-Jl9"/>
+        <segue reference="fk8-LS-uPR"/>
         <segue reference="Sqw-N6-ClW"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -576,6 +612,9 @@
         <image name="profile_pic" width="4896" height="4740"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
